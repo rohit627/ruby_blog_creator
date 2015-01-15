@@ -1,8 +1,10 @@
+#Dependencies
 require "rubygems"
 require "sinatra"
 require "sinatra/reloader"
 require "data_mapper"
 
+#Setting up the data base model
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/text.db")
 
 class Blog
@@ -17,11 +19,13 @@ end
 
 DataMapper.finalize.auto_upgrade!
 
+#home route
 get "/" do
     @blogs = Blog.all :order => :id.desc
     erb :home
 end
 
+#route to add post
 get "/add" do
     erb :add
 end
@@ -37,11 +41,13 @@ post "/add" do
     redirect "/"
 end
 
+#route to show posts
 get "/:id" do
    @post = Blog.get params[:id]
    erb :post
 end
 
+#route to edite posts
 get "/:id/edit" do
     @edit = Blog.get params[:id]
     erb :edit
@@ -57,6 +63,7 @@ post "/:id/edit" do
     redirect "/#{params[:id]}"
 end
 
+#route to delete posts
 get "/:id/delete" do
     @delete = Blog.get params[:id]
     erb :delete
@@ -67,10 +74,4 @@ post "/:id/delete" do
     b.destroy
     redirect "/"
 end
-
-
-
-
-
-
 
