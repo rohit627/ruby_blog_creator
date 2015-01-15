@@ -1,0 +1,12 @@
+<h1 align="center" class="head"><a href="/">Blog Creator</a></h1>
+<h3 align="right"><a href="/add" class="btn btn-primary">Add Post</a></h3>
+<section class="posts">
+	<% @blogs.each do |b| %>
+	<a href="/<%= b.id %>" id="post">
+		<h2><%= b.heading %></h2>
+		<small>by <b><%= b.author %></b> on <%= b.created_at.strftime('%A, %d %B %Y') %> </small>
+		<p><%= b.content %></p>
+		<!-- <a href="/<%= b.id %>" class="btn btn-primary">Show</a> -->
+	</a>	
+	<% end %>
+</section>

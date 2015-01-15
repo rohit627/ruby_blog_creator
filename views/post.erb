@@ -1,0 +1,14 @@
+<% if @post %>
+	<h1 class="head">Details:</h1>
+	<h2><%= @post.heading %></h2>
+	<small>by <b><%= @post.author %></b> on <%= @post.created_at.strftime('%A, %d %B %Y') %> </small>
+	<p><%= @post.content %></p>
+	<div class="btn-grp">
+		<a href="/" class="btn btn-default">back</a>
+		<a href="/<%= @post.id %>/edit" class="btn btn-primary">Edit</a>
+		<a href="/<%= @post.id %>/delete" class="btn btn-danger">delete</a>
+	</div>
+<%else%>
+	<p>Post Dosent Exist</p>
+	<a href="/">back</a>
+<% end %>

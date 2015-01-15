@@ -1,0 +1,11 @@
+<% if @edit %>
+<h1 class="head">Edit:</h1>
+<form action="/<%= @edit.id%>/edit" method="post">
+	<input class="form-control" type="text" name="heading" value="<%= @edit.heading%>"><br>
+	<textarea class="form-control" name="content" cols="30" rows="10"><%= @edit.content %></textarea><br>
+	<input class="form-control" type="text" name="author" value="<%= @edit.author%>"><br>
+	<input type="submit" class="btn btn-primary">
+</form>
+<% else %>
+<p>Page dosen't exit</p>
+<% end %>
