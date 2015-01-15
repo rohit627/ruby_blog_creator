@@ -31,3 +31,7 @@ bundle exec rackup
 ```
 
 This will run the server
+
+##Screenshot
+
+![HomePage](https://github.com/rohit627/ruby_blog_creator/blob/master/screenshots/Screen%20Shot%202015-01-16%20at%203.51.50%20am.png)
