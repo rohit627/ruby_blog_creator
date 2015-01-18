@@ -1,0 +1,23 @@
+/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby -r ./siteconf20150118-977-1u0qtr2.rb extconf.rb 
+checking for sqlite3.h... yes
+checking for sqlite3_open() in -lsqlite3... yes
+checking for localtime_r()... yes
+checking for gmtime_r()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_enable_load_extension()... no
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling do_common.c
+compiling do_sqlite3.c
+compiling do_sqlite3_extension.c
+linking shared-object do_sqlite3/do_sqlite3.bundle
+ld: warning: directory not found for option '-L/opt/local/'
+ld: warning: directory not found for option '-L/opt/local/'
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 do_sqlite3.bundle ./.gem.20150118-977-cg5t84/do_sqlite3
+installing default do_sqlite3 libraries
